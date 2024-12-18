@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <script defer src="./js/login.js"></script>
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+  <title>Memory Game | Login</title>
+</head>
+<body>
+
+  <main>
+    <form class="login-form">
+      <div class="login__header">
+        <img src="./images/logo.png" alt="logo">
+        <h1>Memory Game</h1>
+      </div>
+      <input type="text" placeholder="Enter your name" class="login__input">
+      <button type="submit" class="login__button">Play</button>
+    </form>
+
+    <div class="difficulty-selection">
+      <h2>Select Difficulty</h2>
+      <div class="difficulty-buttons">
+        <button onclick="window.location='pages/easy.html'">Easy (4 Pairs)</button>
+        <button onclick="window.location='pages/medium.html'">Medium (6 Pairs)</button>
+        <button onclick="window.location='pages/hard.html'">Hard (10 Pairs)</button>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

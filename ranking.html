@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ranking</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    table { width: 50%; margin: 0 auto; border-collapse: collapse; }
+    th, td { padding: 8px 12px; border: 1px solid #ddd; }
+    th { background-color: #f4f4f4; }
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .back-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ranking</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Jogador</th>
+        <th>Pontuação</th>
+      </tr>
+    </thead>
+    <tbody id="ranking"></tbody>
+  </table>
+
+  
+  <button class="back-button" onclick="window.location='../index.html'">Back to Menu</button>
+</main>
+
+  <script>
+   
+    const ranking = JSON.parse(localStorage.getItem('players')) || [];
+    const rankingTable = document.getElementById('ranking');
+
+    
+    ranking.sort((a, b) => b.score - a.score);
+
+   
+    ranking.forEach(player => {
+      if (player.name && player.score >= 0) {  
+        const row = document.createElement('tr');
+        const playerName = document.createElement('td');
+        const playerScore = document.createElement('td');
+
+        playerName.textContent = player.name;  
+        playerScore.textContent = player.score >= 1 ? player.score : 0;  
+
+        row.appendChild(playerName);
+        row.appendChild(playerScore);
+        rankingTable.appendChild(row);
+      }
+    });
+  </script>
+</body>
+</html>

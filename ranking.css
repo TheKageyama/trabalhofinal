@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  .ranking {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  #ranking-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #ranking-list li {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
